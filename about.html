@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Tagaur School </title>
+  <link rel="icon" href="Images/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <section class="sub-header">
+    <nav>
+      <a href="home.html"><img src="Images/college_logo.png" alt="" /></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="courses.html">COURSES</a></li>
+          <li><a href="blog.html">BLOGS</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>About Us</h1>
+  </section>
+
+  <!-- about us section -->
+
+  <section class="about-us">
+    <div class="row">
+      <div class="about-col">
+        <img src="Images/about_us2.jpg" alt="" />
+      </div>
+      <div class="about-col">
+        <h1>We set the standard in the industry</h1>
+        <p>
+          We are a team of dedicated and passionate developers who embrace the challenge of creating solutions that break boundaries and inspire change. Driven by innovation and a commitment to excellence, we tackle complexities and reimagine what’s possible. Through collaboration and constant exploration, we aim to set new standards and shape a future where the impossible becomes possible.
+        </p>
+        <a href="" class="hero-btn red-btn">Begin Your Journey</a>
+      </div>
+    </div>
+  </section>
+ 
+  
+
+  <!-- ----------footer---------------- -->
+
+  <section class="footer">
+    <h1>Learn About Us</h1>
+    <div class="footer-intro">
+      <p>
+        "We are enthusiastic developers focused on creating innovative solutions that combine technology with creativity."<br />"Our mission is to create seamless experiences that push the boundaries of possibility."
+      </p>
+    </div>
+    <div class="icons">
+      <a href="https://www.facebook.com/mahiaokallove/" class="fa fa-facebook"></a>
+      <a href="https://x.com/?lang=en" class="fa fa-twitter"></a>
+      <a href="https://www.instagram.com/mahi_sokal_143/" class="fa fa-instagram"></a>
+      <a href="https://www.linkedin.com/in/mahendra-kumawat-291b7a316/" class="fa fa-linkedin"></a>
+    </div>
+    <p>Made with <i class="fa fa-heart-o"></i> by Mahendra Kumawat</p>
+
+  </section>
+
+  <!--Javascript for Toggle Menu-->
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+</body>
+
+</html>

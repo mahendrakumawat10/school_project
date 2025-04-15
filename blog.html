@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Tagaur School </title>
+    <link rel="icon" href="Images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="home.html"><img src="Images/college_logo.png" alt="" /></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="courses.html">COURSES</a></li>
+                    <li><a href="blog.html">BLOGS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Our Expert-Led Certificates and Online Programs for 2024</h1>
+    </section>
+
+    <!-- Blog page section -->
+
+    <section class="blog-content">
+        <div class="row">
+            <div class="blog-left">
+                <img src="Images/certificate.jpg" alt="" />
+                <h1>Overview of Our Certificate Programs for 2023</h1>
+                <p>
+                    Welcome to the distinguished Certificate Program at the Science, Maths, and Arts School of Tagaur
+                    International School! This comprehensive educational journey is carefully designed for passionate
+                    individuals eager to enhance their skills and knowledge in the dynamic fields of science,
+                    mathematics, and the arts. Our program is thoughtfully curated to offer a wide range of benefits,
+                    catering to the needs of aspiring students and preparing them for success in these ever-evolving
+                    disciplines.
+                    <br />
+                    <br />
+                    At the heart of our program lies a faculty composed of seasoned experts, each dedicated to nurturing
+                    your growth. This expertise is paired with a curriculum that is not only forward-thinking but also
+                    at the cutting edge of scientific, mathematical, and artistic advancements. With a strong emphasis
+                    on practicality, hands-on projects are an integral part of your learning experience, ensuring that
+                    you are well-equipped to apply theoretical knowledge to real-world situations.
+                    <br />
+                    <br />
+                    In recognition of the vital connection between academia and industry, Tagaur International School
+                    has forged collaborations with leading industry professionals. This opens doors for students to gain
+                    valuable insights directly from experts and engage in projects that are aligned with real-world
+                    applications. Our state-of-the-art facilities offer an ideal environment for you to transform your
+                    ideas into tangible innovations across science, mathematics, and the arts.
+                    <br />
+                    <br />
+                    We wholeheartedly invite you to join us at the Science, Maths, and Arts School of Tagaur
+                    International School and become an integral part of shaping your future in these dynamic fields.
+                </p>
+
+
+                <div class="comment-box">
+                    <div>
+                        <h3>Leave a Comment</h3>
+                        <form class="comment-form" id="comment-form">
+                            <input type="text" name="name" placeholder="Enter Name" required />
+                            <input type="email" name="email" placeholder="Enter Email" required />
+                            <textarea name="message" placeholder="Enter Comment" rows="5" required></textarea>
+                            <button type="submit" class="hero-btn red-btn">Post Comment</button>
+                        </form>
+                        <div id="comment-message" style="margin-top: 10px; color: green;"></div>
+                        <div id="comment-list" style="margin-top: 20px;"></div>
+                    </div>
+                </div>
+
+                <script>
+                    document.getElementById('comment-form').addEventListener('submit', function (event) {
+                        event.preventDefault(); //
+
+                        const form = this;
+                        const name = form.querySelector('[name="name"]').value.trim();
+                        const email = form.querySelector('[name="email"]').value.trim();
+                        const message = form.querySelector('[name="message"]').value.trim();
+                        const messageBox = document.getElementById('comment-message');
+                        const commentList = document.getElementById('comment-list');
+
+                        if (!name || !email || !message) {
+                            messageBox.style.color = 'red';
+                            messageBox.textContent = "Please fill in all fields.";
+                            return;
+                        }
+
+                        // Success message
+                        messageBox.style.color = 'green';
+                        messageBox.textContent = "Comment posted successfully!";
+
+                        // Add the comment to the list below the form
+                        const commentItem = document.createElement('div');
+                        commentItem.style.border = "1px solid #ccc";
+                        commentItem.style.padding = "10px";
+                        commentItem.style.marginBottom = "10px";
+                        commentItem.style.position = "relative";
+                        commentItem.innerHTML = `
+        <strong>${name}</strong> (${email})<br>${message}
+        <span class="delete-comment" style="position:absolute; top:20px; right:20px; cursor:pointer; color:red; font-weight:bold; ">&times; </span>
+    `;
+
+                        // Add delete functionality
+                        commentItem.querySelector('.delete-comment').addEventListener('click', function () {
+                            commentItem.remove();
+                        });
+
+                        commentList.prepend(commentItem); // Add the new comment at the top
+                        form.reset(); // Clear form
+                    });
+                </script>
+
+
+            </div>
+            <div class="blog-right">
+                <h3>Post Categories</h3>
+                <div>
+                    <span>Computer Science</span>
+                    <span>25</span>
+                </div>
+                <div>
+                    <span> Biology </span>
+                    <span>28</span>
+                </div>
+                <div>
+                    <span> Arts </span>
+                    <span>21</span>
+                </div>
+                <div>
+                    <span> Mathamatics </span>
+                    <span>20</span>
+                </div>
+                <div>
+                    <span>Arts with Maths </span>
+                    <span>22</span>
+                </div>
+                <div>
+                    <span>Arts with chemistry</span>
+                    <span>31</span>
+                </div>
+                <div>
+                    <span> Maths with Computer </span>
+                    <span>30</span>
+                </div>
+                <div>
+                    <span> Home Science </span>
+                    <span>25</span>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- ----------footer---------------- -->
+
+    <section class="footer">
+        <h1>Learn About Us</h1>
+        <div class="footer-intro">
+            <p>
+                "We are enthusiastic developers focused on creating innovative solutions that combine technology with
+                creativity."<br />"Our mission is to create seamless experiences that push the boundaries of
+                possibility."
+            </p>
+        </div>
+        <div class="icons">
+            <a href="https://www.facebook.com/mahiaokallove/" class="fa fa-facebook"></a>
+            <a href="https://x.com/?lang=en" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com/mahi_sokal_143/" class="fa fa-instagram"></a>
+            <a href="https://www.linkedin.com/in/mahendra-kumawat-291b7a316/" class="fa fa-linkedin"></a>
+        </div>
+        <p>Made with <i class="fa fa-heart-o"></i> by Mahendra Kumawat</p>
+
+    </section>
+
+    <!--Javascript for Toggle Menu-->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>
